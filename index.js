@@ -32,8 +32,6 @@ const capitaliseAndSpaceString = (string) => {
 capitaliseAndSpaceString(hacker1);
 
 // Iteration 3.2
-
-
 const reverseString = (string) => {
     let reversedString = "";
     for (let i=string.length-1; i>=0; i--) {
@@ -79,14 +77,28 @@ const countNumberOfEtInstances = (string) => {
         for (let i=0; i<lowerCaseString.length; i++) {
                 if (lowerCaseString[i]+lowerCaseString[i+1] === "et" ) {
                     etCount++;
-                
             }
         }
     return console.log(etCount);
-
 };
 
 countNumberOfWords(longText);
 countNumberOfEtInstances(longText);
 
+// Bonus 2
+const checkPhrase = (string) => {
+    const preparedString = string.replaceAll(/[^a-z0-9]/gi,"").toLowerCase();
+    let count=0;
+    let isPalindrome;
+    for (let i=0; i<preparedString.length; i++) {
+        if (preparedString[i] === preparedString[preparedString.length-1-i]) {
+            count++;
+        } 
+        isPalindrome = (count === preparedString.length) ? "This is a palindrome" : "This is not a palindrome"  
+    } 
+    return console.log(isPalindrome);
+} 
+
+const phraseToCheck = "Was it a car or a cat I saw?";
+checkPhrase(phraseToCheck);
 
