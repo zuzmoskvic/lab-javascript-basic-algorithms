@@ -3,3 +3,5 @@ const sumOfEvenValues = (array) => {
 }
 
 console.log(sumOfEvenValues([2,4]));
+
+// test
